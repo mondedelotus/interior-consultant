@@ -1,0 +1,368 @@
+/*! minireset.css v0.0.7 | MIT License | github.com/jgthms/minireset.css */
+@import url(https://fonts.googleapis.com/css?family=Crimson+Pro:200&display=swap);
+@import url(https://fonts.googleapis.com/css?family=Montserrat:regular,500,700&display=swap);
+@import url(https://fonts.googleapis.com/css?family=Lora:regular,500,700&display=swap);
+html,
+body,
+p,
+ol,
+ul,
+li,
+dl,
+dt,
+dd,
+blockquote,
+figure,
+fieldset,
+legend,
+textarea,
+pre,
+iframe,
+hr,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0;
+  padding: 0;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-size: 100%;
+  font-weight: normal;
+}
+
+ul {
+  list-style: none;
+}
+
+ul a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button,
+input,
+select {
+  margin: 0;
+}
+
+html {
+  box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+img,
+video {
+  height: auto;
+  max-width: 100%;
+}
+
+.nowrap {
+  text-wrap: nowrap;
+}
+
+:root {
+  background: #181719;
+  color: #fff;
+}
+
+html {
+  height: 100%;
+}
+
+body {
+  padding: 0 clamp(0.75rem, -0.68rem + 6.1vw, 4.813rem);
+  min-height: 100%;
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+}
+
+.header__container {
+  padding: 42px 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+}
+@media (max-width: 992px) {
+  .header__container {
+    padding: 25px 0;
+  }
+}
+@media (max-width: 768px) {
+  .header__container {
+    padding: 20px 0;
+  }
+}
+.header__logo {
+  display: inline-block;
+  padding: 8px;
+  font-family: "Crimson Pro";
+  font-weight: 200;
+  font-size: 14px;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: #fff;
+  border: 1px solid #FFFFFF;
+}
+@media (max-width: 768px) {
+  .menu {
+    z-index: 2;
+    position: absolute;
+    top: 0;
+    left: -100%;
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    overflow: auto;
+    padding: 20px 0;
+    background-color: #1F1F1F;
+    transition: left 0.2s;
+  }
+  .menu._active {
+    left: 0;
+  }
+}
+.menu__icon {
+  display: none;
+}
+@media (max-width: 768px) {
+  .menu__icon {
+    display: block;
+    height: 18px;
+    width: 30px;
+    position: relative;
+    cursor: pointer;
+    z-index: 5;
+  }
+  .menu__icon span {
+    transition: all 0.3s ease 0s;
+    top: calc(50% - 1px);
+    left: 0;
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    background-color: #fff;
+  }
+  .menu__icon span:first-child {
+    top: 0;
+  }
+  .menu__icon span:last-child {
+    top: auto;
+    bottom: 0;
+  }
+  .menu__icon._active span {
+    transform: scale(0);
+  }
+  .menu__icon._active span:first-child {
+    transform: rotate(-45deg);
+    top: calc(50% - 1px);
+  }
+  .menu__icon._active span:last-child {
+    transform: rotate(45deg);
+    bottom: calc(50% - 1px);
+  }
+}
+.menu__body {
+  display: flex;
+  align-items: center;
+}
+@media (max-width: 768px) {
+  .menu__body {
+    flex-direction: column;
+    margin: auto;
+  }
+}
+@media (max-width: 768px) {
+  .menu__body {
+    line-height: 60px;
+  }
+}
+.menu__item {
+  padding: 30px 43px;
+}
+@media (max-width: 992px) {
+  .menu__item {
+    padding: 30px 25px;
+  }
+}
+@media (max-width: 576px) {
+  .menu__item {
+    padding: 16px;
+  }
+}
+.menu__link {
+  position: relative;
+  font-family: "Montserrat";
+  font-weight: 500;
+  font-size: 18px;
+}
+.menu__link.active {
+  font-weight: 700;
+}
+.menu__link.active:after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -8px;
+  width: 100%;
+  border-bottom: 2px solid #FFFFFF;
+}
+
+.hero {
+  margin-top: clamp(2.375rem, 0.35rem + 8.64vw, 8.125rem);
+  margin-bottom: clamp(6.25rem, 3.389rem + 12.21vw, 14.375rem);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: clamp(1.875rem, -13.348rem + 24.55vw, 8.75rem);
+}
+@media (max-width: 992px) {
+  .hero {
+    flex-direction: column;
+  }
+}
+.hero__usp {
+  flex: 0.4;
+}
+.hero__photo {
+  position: relative;
+  flex: 0.6;
+}
+
+.usp__title {
+  font-family: "Lora";
+  font-weight: 500;
+  font-size: 48px;
+}
+@media (max-width: 576px) {
+  .usp__title {
+    font-size: 36px;
+  }
+}
+.usp__description {
+  padding-top: clamp(1.563rem, 1.232rem + 1.41vw, 2.5rem);
+  padding-bottom: clamp(1.563rem, 1.056rem + 2.16vw, 3rem);
+  font-family: "Montserrat";
+  font-size: 24px;
+  line-height: 29px;
+}
+@media (max-width: 576px) {
+  .usp__description {
+    font-size: 14px;
+    line-height: 17px;
+  }
+}
+.usp__link {
+  font-family: "Montserrat";
+  font-weight: 700;
+  font-size: 18px;
+  text-decoration: none;
+  color: #fff;
+}
+
+.photo__creds-wrapper {
+  position: absolute;
+  background-color: #181719;
+  bottom: 0;
+  transform: translate(-20%, 50%);
+  left: 50%;
+  width: 50%;
+  padding: 26px 18px;
+}
+@media (max-width: 576px) {
+  .photo__creds-wrapper {
+    transform: translate(-50%, 50%);
+    width: 90%;
+    padding: 22.5px 13px;
+  }
+}
+.photo__img {
+  width: 100%;
+  height: 555px;
+  object-fit: cover;
+}
+@media (max-width: 992px) {
+  .photo__img {
+    height: auto;
+  }
+}
+.photo__author {
+  display: flex;
+  gap: 19px;
+}
+
+.author__img {
+  border-radius: 37px;
+}
+@media (max-width: 576px) {
+  .author__img {
+    width: 36.6px;
+  }
+}
+.author__creds-name {
+  font-family: "Montserrat";
+  font-weight: 500;
+  font-size: 14px;
+}
+@media (max-width: 576px) {
+  .author__creds-name {
+    font-size: 12px;
+  }
+}
+.author__creds-occup {
+  padding-top: 8px;
+  font-family: "Montserrat";
+  font-weight: 500;
+  font-size: 12px;
+  color: #828282;
+}
+@media (max-width: 576px) {
+  .author__creds-occup {
+    padding-top: 6px;
+    font-size: 10px;
+  }
+}
+.author__attribution {
+  padding-top: 25px;
+  font-family: "Lora";
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 31px;
+}
+@media (max-width: 576px) {
+  .author__attribution {
+    font-size: 18px;
+    line-height: 23px;
+  }
+}
+
+.footer {
+  padding-top: 50px;
+  padding-bottom: 25px;
+}
+.footer__copyright {
+  font-family: "Montserrat";
+  font-size: 14px;
+  line-height: 17px;
+  text-align: center;
+  color: #BDBDBD;
+}
+
+.copyright__owner {
+  font-weight: 700;
+  text-decoration: underline;
+}
